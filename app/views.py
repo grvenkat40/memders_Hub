@@ -47,7 +47,7 @@ def send_test_email(request, slug):
         messages.success(request, "Email sent successfully!")
         # return HttpResponse("Email Sent!")
     except Exception as e:
-        messages.error(request, f"Filed to send Email! {str(e)}")
+        messages.error(request, f"Failed to send Email! {str(e)}")
         # return HttpResponse(e)
     return redirect('details', slug=slug)
     
