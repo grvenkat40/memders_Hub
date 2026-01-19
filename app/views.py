@@ -1,7 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .models import userreg
+import random
 from django.core.mail import send_mail
 
 def home(request):
@@ -21,7 +23,7 @@ def details(request, slug):
     }
     return render(request, "detail.html", context)
 
-import random
+@require_POST
 def send_test_email(request, slug):
     person = get_object_or_404(userreg, slug=slug)
     otp = random.randint(100000,999999)
