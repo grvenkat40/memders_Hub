@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %}
+  <title>All Member</title>
+{% endblock %}
+
+{% block content %}
+  <h1>Members</h1>
+  <div class="table-container">
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Details</th>
+        </tr>
+        {% for user in user_members %}
+          <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td><a href="{% url 'details' user.slug %}">View</a></td>
+          </tr>
+        {% endfor %}
+    </table>
+  </div>
+
+{% endblock %}

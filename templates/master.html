@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Member Profile - Full Page</title>
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/myfirst.css' %}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">MemberHub</div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'members' %}">Members</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+{% block content %}
+        <main>
+        <div class="landing-container">
+            <h1>Welcome to the Members Page...</h1>
+            <p>Join our community and get access to exclusive content, resources, and networking opportunities with fellow members.</p>
+            
+            <div class="cta-buttons">
+                <a href="{% url 'members' %}" class="btn btn-primary">Get Started</a>
+                <a href="#learn" class="btn btn-secondary">Learn More</a>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-title">Community</div>
+                    <div class="feature-desc">Connect with like-minded members</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-title">Exclusive Access</div>
+                    <div class="feature-desc">Premium content and resources</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Fast Support</div>
+                    <div class="feature-desc">24/7 member assistance</div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">© 2026 MemberHub. All rights reserved.</div>
+            <ul class="footer-links">
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="{% static 'js/app.js' %}" ></script>
+</body>
+</html>
